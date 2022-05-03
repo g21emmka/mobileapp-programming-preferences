@@ -21,7 +21,11 @@ public class MainActivity extends AppCompatActivity {
         textViewName = findViewById(R.id.name);
         preferences = getSharedPreferences("preferences", MODE_PRIVATE);
 
+        //Denna skulle fungera i en setonClickListener
 
+        //SharedPreferences.Editor editor = preferences.edit();
+        //editor.putString("name", "Emma");
+        //editor.apply();
     }
 
     @Override
