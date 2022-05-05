@@ -31,10 +31,8 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         SharedPreferences MyPreferences = this.getSharedPreferences("Preferences", Context.MODE_PRIVATE);
-        String name = MyPreferences.getString("name", "inget namn hittat");
+        String name = MyPreferences.getString("name", "no name found");
         textViewName.setText(name);
-
-
     }
 
     public void startActivity(View view) {
