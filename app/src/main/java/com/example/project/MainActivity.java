@@ -37,5 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void startActivity(View view) {
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
 }
 
