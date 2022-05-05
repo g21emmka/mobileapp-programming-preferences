@@ -1,39 +1,46 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+Jag har börjat med att skapa en second activity, i denna har jag lagt in en TextView, EditText och en button
+som jag sedan positionerat ut. Jag har lagt in shared preferences i både MainActivity (sida 1)och i SecondActivity (sida 2),
+detta gör så att det som skrivs in i SecondActivity syns i MainActivity, även om vi stänger ner SecondActivity.
+I SecondActivity är även en editor tillagd till SharedPreferences. 
 
-_Du kan ta bort all text som finns sedan tidigare_.
-
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
+En bit programkod som visar SharedPreferences i MainActivity (sida 1).
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
+@Override
+    protected void onResume() {
+        super.onResume();
+
+        SharedPreferences MyPreferences = this.getSharedPreferences("Preferences", Context.MODE_PRIVATE);
+        String name = MyPreferences.getString("name", "no name found");
+        textViewName.setText(name);
     }
-}
+```
+En bit programkod som visar SharedPreferences i SecondActivity (sida 2).
+```
+ // Store the new preference
+        SharedPreferences MyPreferences = this.getSharedPreferences("Preferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = MyPreferences.edit();
+        editor.putString("name", getname);
+        editor.apply();
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
+ParentActivityName är tillagd i Manifest filen, detta för att göra MainActivity till en förälder för SecondActivity.
+Detta visas genom en tillbaka pil som finns uppe i vänstra hörnet på sidan.
+Sedan la jag till en finish activity i SecondActivity så att när man klickar på knappen "Go" så kommer man tillbaka 
+till sida 1 där namnet visas. Så det går att gå till sida 1 igen antingen genom tillbaka pilen eller genom att klicka
+på knappen. 
 
-![](android.png)
+
+
+Bild från sida 2, där namnet Emma skrivs in.
+
+![](page2.png)
+
+Bild från sida 1, där man kan se att namnet Emma dyker upp, som skrevs in på föregående sida.
+
+![](page1.png)
 
 Läs gärna:
 
