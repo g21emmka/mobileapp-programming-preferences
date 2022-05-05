@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -23,20 +24,17 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         textViewName = findViewById(R.id.name);
         preferences = getSharedPreferences("preferences", MODE_PRIVATE);
-
-        //Denna skulle fungera i en setonClickListener
-
-        //SharedPreferences.Editor editor = preferences.edit();
-        //editor.putString("name", "Emma");
-        //editor.apply();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        String name = preferences.getString("name", "inget namn hittat");
+        SharedPreferences MyPreferences = this.getSharedPreferences("Preferences", Context.MODE_PRIVATE);
+        String name = MyPreferences.getString("name", "inget namn hittat");
         textViewName.setText(name);
+
+
     }
 
 }

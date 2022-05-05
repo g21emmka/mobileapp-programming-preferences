@@ -14,7 +14,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         // Store the new preference
-        SharedPreferences MyPreferences = this.getSharedPreferences("Hello", Context.MODE_PRIVATE);
+        SharedPreferences MyPreferences = this.getSharedPreferences("Preferences", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = MyPreferences.edit();
         editor.putString("name", "Emma");
         editor.apply();
