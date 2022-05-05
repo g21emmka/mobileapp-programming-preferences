@@ -38,30 +38,6 @@ public class MainActivity extends AppCompatActivity {
         String name = preferences.getString("name", "inget namn hittat");
         textViewName.setText(name);
     }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("==>", "MainAcitivty started.");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d("==>", "MainAcitivty stopped.");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("==>", "MainAcitivty destroyed.");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("==>", "MainAcitivty paused.");
-    }
-
 
 }
 
