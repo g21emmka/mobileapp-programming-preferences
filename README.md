@@ -36,11 +36,11 @@ på knappen.
 
 Bild från sida 2, där namnet Emma skrivs in.
 
-![](page2.png)
+![](Page2.png)
 
 Bild från sida 1, där man kan se att namnet Emma dyker upp, som skrevs in på föregående sida.
 
-![](page1.png)
+![](Page1.png)
 
 Läs gärna:
 
