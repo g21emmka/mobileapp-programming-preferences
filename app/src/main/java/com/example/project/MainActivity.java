@@ -1,7 +1,10 @@
 package com.example.project;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,4 +38,30 @@ public class MainActivity extends AppCompatActivity {
         String name = preferences.getString("name", "inget namn hittat");
         textViewName.setText(name);
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("==>", "MainAcitivty started.");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("==>", "MainAcitivty stopped.");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("==>", "MainAcitivty destroyed.");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("==>", "MainAcitivty paused.");
+    }
+
+
 }
+
